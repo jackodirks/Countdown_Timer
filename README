@@ -1,3 +1,4 @@
 This Program has been created using Qt and C++. It is a training for met to get used to using Qt Creator and GitHub
 
 The purpose of this program is to countdown to a certain event. The time for this event and the name of this event should be set in some sort of a config file, maybe a XML file. 
+Because mainly Qt is used I am focussing on gettng this to work on both Linux and Windows, only requiring a recompile to make it work on another OS. The default OS for this project will be Linux.
