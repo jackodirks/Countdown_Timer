@@ -1,7 +1,8 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QtCore>
+#include "stable.h"
+
 #include <QMainWindow>
 #include <iostream>
 #include <time.h>
