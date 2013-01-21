@@ -6,6 +6,7 @@
 #ifdef __cplusplus
 #include <QtCore>
 #include <QApplication>
+#include <QList>
 
 #ifdef QT_DEBUG
 #include <QDebug>

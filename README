@@ -2,3 +2,12 @@ This Program has been created using Qt and C++. It is a training for met to get 
 
 The purpose of this program is to countdown to a certain event. The time for this event and the name of this event should be set in some sort of a config file, maybe a XML file. 
 Because mainly Qt is used I am focussing on gettng this to work on both Linux and Windows, only requiring a recompile to make it work on another OS. The default OS for this project will be Linux.
+The XML file can contain multiple events, which can be chosen from in the software. 
+
+Tasks:
+-Accepting the XML file as an argument
+-Getting the XML reader to work
+-Creating a system in which you can pick from the list
+
+Ideas for the future:
+-Make the background the current time by using an analog clock. 
