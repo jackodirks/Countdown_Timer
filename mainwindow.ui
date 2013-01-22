@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>474</width>
-    <height>337</height>
+    <width>566</width>
+    <height>204</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -19,14 +19,16 @@
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>451</width>
+      <width>541</width>
       <height>31</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>Times New Roman</family>
+      <family>Arial</family>
       <pointsize>12</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
      </font>
     </property>
     <property name="text">
@@ -38,13 +40,13 @@
      <rect>
       <x>10</x>
       <y>90</y>
-      <width>451</width>
+      <width>541</width>
       <height>31</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>Times New Roman</family>
+      <family>Arial</family>
       <pointsize>12</pointsize>
      </font>
     </property>
@@ -57,13 +59,13 @@
      <rect>
       <x>10</x>
       <y>50</y>
-      <width>451</width>
+      <width>541</width>
       <height>31</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>Times New Roman</family>
+      <family>Arial</family>
       <pointsize>12</pointsize>
      </font>
     </property>
@@ -76,13 +78,13 @@
      <rect>
       <x>10</x>
       <y>130</y>
-      <width>441</width>
+      <width>541</width>
       <height>31</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>Times New Roman</family>
+      <family>Arial</family>
       <pointsize>12</pointsize>
      </font>
     </property>
@@ -96,7 +98,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>474</width>
+     <width>566</width>
      <height>21</height>
     </rect>
    </property>

@@ -11,3 +11,11 @@ Tasks:
 
 Ideas for the future:
 -Make the background the current time by using an analog clock. 
+
+The example XML:
+
+<?xml version="1.0" encoding="utf-8"?>
+<event name="2014">
+	<description>the year 2014</description>
+	<epochtime>
+</event>

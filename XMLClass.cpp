@@ -1,4 +1,5 @@
 #include "XMLClass.h"
+#include <QXmlStreamReader>
 
 //class XMLReader
 XMLReader::XMLReader(QString fileName){
