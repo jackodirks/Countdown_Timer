@@ -23,7 +23,7 @@ class XMLReader{
 public:
     //methods
     XMLReader(QString fileName);
-    bool readFile(QList<EventObject> *& eventObjectList);
+    QList<EventObject> readFile(bool *ok);
 private:
     //methods
     //variables

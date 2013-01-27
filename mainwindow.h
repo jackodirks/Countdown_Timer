@@ -19,12 +19,20 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();    
-     void timer();
-    
+
+    void timer();
+
+    void setFileName(QString filename);
 private:
+    //methods
+    void startTimer();
     //variables
     Ui::MainWindow *ui;
-    QDateTime endDateTime;
+    QTimer *timer;
+
+    QString fileName;
+
+    QDateTime eventDateTime;
     QString eventName;
     qint64 epochEventTime;
     //methods/functions

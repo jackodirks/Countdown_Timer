@@ -7,13 +7,13 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     eventName = "landing op schiphol. Eindelijk thuis =) (bijna dan)";
-    QTimer *timer = new QTimer(this);
+    timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(update()));
     //The timer is now thrown every 40 ms. This goes to the update slot.
     timer->start(1000);
     QDate date(2013,2,2);
     QTime time(15,50,0,0);
-    endDateTime = QDateTime(date,time);
+    eventDateTime = QDateTime(date,time);
     ui->labelUpper->setText("Counting down to: " + eventName);
     ui->labelMiddle->setText("This event takes place on: "+ endDateTime.toString("ddd dd MMMM yyyy, hh:mm"));    
 }
