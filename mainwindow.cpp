@@ -48,8 +48,13 @@ void MainWindow::setFileName(QString fileName){
     eventList = xMlReader->readFile(&ok);
     if (!ok){
         eventName.clear();
-        ui->labelUpper->setText("<font color='red'>Error opening file " + fileName + "</font>" );
+        ui->labelUpper->setText("<font color='red'>Error reading file " + fileName + "</font>" );
         ui->labelMiddle->setText("<font color='red'>Check if the file exists and if the program has read acces</font>");
+        ui->labelLower->setText("<font color='red'>The file might also be damaged or contain XML errors</font");
+        return;
+    }
+    if (eventList.length() == 0){
+        ui->labelUpper->setText("<font color ='red'>Error: empty or incorrectly formatted XML file " + fileName + ".</font>");
         return;
     }
 
@@ -61,24 +66,35 @@ void MainWindow::setFileName(QString fileName){
         signalMapper->setMapping(actions.at(i),i);
         connect(actions.at(i),SIGNAL(triggered()),signalMapper,SLOT(map()));
     }
+    currentEventIndex = 0;
+    setEvent();
+    actions.at(currentEventIndex)->setChecked(true);
+    connect(timer,SIGNAL(timeout()),this,SLOT(eventTimerSlot()));
 
-    eventDescription = "landing op schiphol. Eindelijk thuis =) (bijna dan)";
-    QDate date(2013,2,2);
-    QTime time(15,50,0,0);
-    eventDateTime = QDateTime(date,time);
+}
+
+void MainWindow::setEvent(){
+    eventDescription = eventList.at(currentEventIndex)->getDescription();
+    eventDateTime = QDateTime::fromTime_t(eventList.at(currentEventIndex)->getEpochTime());
     ui->labelUpper->setText("Counting down to: " + eventDescription);
     ui->labelMiddle->setText("This event takes place on: "+ eventDateTime.toString("ddd dd MMMM yyyy, hh:mm"));
     eventTimerSlot();
-    connect(timer,SIGNAL(timeout()),this,SLOT(eventTimerSlot()));
-
 }
 
 void MainWindow::setEventSlot(int event){
 #ifdef QT_DEBUG
     qDebug() << "MainWindow::setEventSlot(int event) says: event no: " + QString::number(event);
 #endif
-
-
+    actions.at(event)->setChecked(true);
+    for (int i = 0; i < actions.length();i++){
+        if ( i != event){
+            actions.at(i)->setChecked(false);
+        }
+    }
+    if (event != currentEventIndex){
+        currentEventIndex = event;
+        setEvent();
+    }
 }
 
 MainWindow::~MainWindow()

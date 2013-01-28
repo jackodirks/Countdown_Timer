@@ -22,12 +22,15 @@ public:
     ~MainWindow();
     void setFileName(QString fileName);
 private:
+    //methods
+    void setEvent();
     //variables
     Ui::MainWindow *ui;
     QTimer *timer;
 
     QList<EventObject*> eventList;
     QList<QAction*> actions;
+    uint currentEventIndex;
 
     QDateTime eventDateTime;
     QString eventName;
