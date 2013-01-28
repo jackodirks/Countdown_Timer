@@ -1,31 +1,34 @@
 #ifndef XMLCLASS_H
 #define XMLCLASS_H
 
-#endif // XMLCLASS_H
 
 #include "stable.h"
 
 class EventObject{
 public:
     //constructor
-    EventObject(qint64 epochTime, QString name, QString message);
+    EventObject(QString name, QString description, uint epochTime);
+    ~EventObject();
     //getters
-    qint64 getEpochTime();
+    uint getEpochTime();
     QString getName();
-    QString getMessage();
+    QString getDescription();
 private:
-    quint64 epochTime;
+    uint epochTime;
     QString name;
-    QString message;
+    QString description;
 };
 
 class XMLReader{
 public:
     //methods
     XMLReader(QString fileName);
-    QList<EventObject> readFile(bool *ok);
+    ~XMLReader();
+    QList<EventObject*> readFile(bool * ok);
 private:
     //methods
     //variables
     QString fileName;
 };
+
+#endif // XMLCLASS_H

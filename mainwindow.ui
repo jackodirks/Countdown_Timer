@@ -99,7 +99,7 @@
      <x>0</x>
      <y>0</y>
      <width>566</width>
-     <height>21</height>
+     <height>27</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -108,7 +108,13 @@
     </property>
     <addaction name="actionExit"/>
    </widget>
+   <widget class="QMenu" name="menuEvents">
+    <property name="title">
+     <string>Events</string>
+    </property>
+   </widget>
    <addaction name="menuFile"/>
+   <addaction name="menuEvents"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionExit">

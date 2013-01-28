@@ -20,24 +20,24 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-    void setFileName(QString filename);
+    void setFileName(QString fileName);
 private:
-    //methods
-    void setTimer(bool start);
     //variables
     Ui::MainWindow *ui;
     QTimer *timer;
 
-    QString fileName;
-
-    QList<EventObject> eventList;
+    QList<EventObject*> eventList;
+    QList<QAction*> actions;
 
     QDateTime eventDateTime;
     QString eventName;
     QString eventDescription;
     qint64 epochEventTime;
-    //methods/functions
-    void paintEvent(QPaintEvent *event);
+
+private slots:
+    void currentTimerSlot();
+    void eventTimerSlot();
+    void setEventSlot(int event);
 };
 
 #endif // MAINWINDOW_H
