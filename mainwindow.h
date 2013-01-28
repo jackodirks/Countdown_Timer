@@ -6,6 +6,7 @@
 #include <QMainWindow>
 #include <iostream>
 #include <time.h>
+#include <XMLClass.h>
 
 
 namespace Ui {
@@ -18,22 +19,22 @@ class MainWindow : public QMainWindow
     
 public:
     explicit MainWindow(QWidget *parent = 0);
-    ~MainWindow();    
-
-    void timer();
-
+    ~MainWindow();
     void setFileName(QString filename);
 private:
     //methods
-    void startTimer();
+    void setTimer(bool start);
     //variables
     Ui::MainWindow *ui;
     QTimer *timer;
 
     QString fileName;
 
+    QList<EventObject> eventList;
+
     QDateTime eventDateTime;
     QString eventName;
+    QString eventDescription;
     qint64 epochEventTime;
     //methods/functions
     void paintEvent(QPaintEvent *event);
