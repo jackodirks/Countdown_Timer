@@ -32,7 +32,7 @@ void MainWindow::eventTimerSlot(){
         restHours+=24;
     }
     QString qStrDays = QString::number(restDays), qStrHour = QString::number(restHours), qStrMinute = QString::number(restMin);
-    ui->labelLower->setText("Time unit this event happens: " + qStrDays + " days, " + qStrHour + " hours and " + qStrMinute + " minutes.");
+    ui->labelLower->setText("Time until this event happens: " + qStrDays + " days, " + qStrHour + " hours and " + qStrMinute + " minutes.");
 }
 
 void MainWindow::currentTimerSlot(){
